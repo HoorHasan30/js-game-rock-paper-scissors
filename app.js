@@ -19,7 +19,7 @@
 //    Clearly indicate who won
 
 /*-------------------------------- Constants --------------------------------*/
-const choices = ['rock', 'paper','scisors']
+const choices = ['rock', 'paper', 'scisors']
 
 /*-------------------------------- Variables --------------------------------*/
 let myChoice
@@ -28,78 +28,153 @@ let message //win || lose
 
 /*------------------------ Cached Element References ------------------------*/
 const resultDisplayElement = document.querySelector('#result-display')
+const playerChoiceElement = document.querySelector('#player-choice')
+const computerChoiceElement = document.querySelector('#computer-choice')
+
 const rockElement = document.querySelector('#rock')
 const paperElement = document.querySelector('#paper')
 const scisorsElement = document.querySelector('#scisors')
 
-const playerChoiceElement = document.querySelector('#player-choice')
-const computerChoiceElement = document.querySelector('#computer-choice')
+const resetElement = document.querySelector("#reset")
 
 console.log(resultDisplayElement)
-console.log(rockElement)
-console.log(paperElement)
-console.log(scisorsElement)
 console.log(playerChoiceElement)
 console.log(computerChoiceElement)
 
+console.log(rockElement)
+console.log(paperElement)
+console.log(scisorsElement)
+
+console.log(resetElement)
+
+
 /*-------------------------------- Functions --------------------------------*/
-
-function play(eevnt){
-
-    console.log("======================")
+function getPlayerChoice(event) {
 
     // 1- Identify what the plyer picked
     myChoice = event.target.id
+
     console.log("My Choice is: " + myChoice)
     playerChoiceElement.textContent = "Player Choice is: " + myChoice
+    playerChoiceElement.style.color = "Grey"
+    playerChoiceElement.style.backgroundColor = "rgba(215, 217, 218, 0.575)"
+}
 
+function getComputerChoice() {
 
     // 2- Randomly pick computer choice
-    computerChoice = choices[Math.floor(Math.random()*3)] //ranom 0 -> 0.9
-    console.log("Computer Choice is: " + computerChoice)
-    computerChoiceElement.textContent = "Computer Choice is: " + computerChoice
+    computerChoice = choices[Math.floor(Math.random() * 3)] //ranom 0 -> 0.9
 
-
-    // 3- Compare both choices
-    if (myChoice === computerChoice){ 
-        console.log("Tie Game")
-        resultDisplayElement.textContent = ("Tie Game")
-        resultDisplayElement.style.color = "Grey"
- 
-        resultDisplayElement.style.backgroundColor = "rgba(215, 217, 218, 0.575)"
-        
-
-    }
-    else if (myChoice == "rock" && computerChoice == "scisors"){
-        console.log("You Win")
-        resultDisplayElement.textContent = ("You Win")
-        resultDisplayElement.style.color = "Green"
-        resultDisplayElement.style.backgroundColor = "rgba(215, 217, 218, 0.575)"
-    }
-    else if (myChoice == "scisors" && computerChoice == "paper"){
-        console.log("You Win")
-        resultDisplayElement.textContent = ("You Win")
-        resultDisplayElement.style.color = "Green"
-        resultDisplayElement.style.backgroundColor = "rgba(215, 217, 218, 0.575)"
-    }
-    else if (myChoice == "paper" && computerChoice == "rock"){
-        console.log("You Win")
-        resultDisplayElement.textContent = ("You Win")
-        resultDisplayElement.style.color = "Green"
-        resultDisplayElement.style.backgroundColor = "rgba(215, 217, 218, 0.575)"
-    }
-    else { 
-        console.log("You Lose")
-        resultDisplayElement.textContent = ("You Lose")
-        resultDisplayElement.style.color = "Red"
-        resultDisplayElement.style.backgroundColor = "rgba(215, 217, 218, 0.575)"
-    }
-
-    // 4- 
+    setTimeout(
+        function () {
+            console.log("Computer Choice is: " + computerChoice)
+            computerChoiceElement.textContent = "Computer Choice is: " + computerChoice
+            computerChoiceElement.style.color = "Grey"
+            computerChoiceElement.style.backgroundColor = "rgba(215, 217, 218, 0.575)"
+        }
+        , 1000)
 }
+
+function compare() {
+    // 3- Compare both choices
+    if (myChoice === computerChoice) {
+        setTimeout(
+            function () {
+                resultDisplayElement.textContent = ("Tie Game")
+                resultDisplayElement.style.color = "Grey"
+                resultDisplayElement.style.backgroundColor = "rgba(215, 217, 218, 0.575)"
+
+                //disable btns
+                disableBtns()
+
+            }
+            , 1100)
+    }
+    else if (myChoice == "rock" && computerChoice == "scisors") {
+        setTimeout(
+            function () {
+                resultDisplayElement.textContent = ("You Win")
+                resultDisplayElement.style.color = "Green"
+                resultDisplayElement.style.backgroundColor = "rgba(215, 217, 218, 0.575)"
+
+                //disable btns
+                disableBtns()
+            }
+            , 1100)
+    }
+    else if (myChoice == "scisors" && computerChoice == "paper") {
+        setTimeout(
+            function () {
+                resultDisplayElement.textContent = ("You Win")
+                resultDisplayElement.style.color = "Green"
+                resultDisplayElement.style.backgroundColor = "rgba(215, 217, 218, 0.575)"
+
+                //disable btns
+                disableBtns()
+            }
+            , 1100)
+    }
+    else if (myChoice == "paper" && computerChoice == "rock") {
+        setTimeout(
+            function () {
+                resultDisplayElement.textContent = ("You Win")
+                resultDisplayElement.style.color = "Green"
+                resultDisplayElement.style.backgroundColor = "rgba(215, 217, 218, 0.575)"
+
+                //disable btns
+                disableBtns()
+            }
+            , 1100)
+    }
+    else {
+        setTimeout(
+            function () {
+                resultDisplayElement.textContent = ("You Lose")
+                resultDisplayElement.style.color = "Red"
+                resultDisplayElement.style.backgroundColor = "rgba(215, 217, 218, 0.575)"
+            
+                //disable btns
+                disableBtns()
+            }
+            , 1100)
+    }
+}
+
+function play(event) {
+
+    console.log("======================")
+
+    getPlayerChoice(event)
+    getComputerChoice()
+    compare()
+    resetGame()
+}
+
+// 4- reset Game
+function disableBtns() {
+    rockElement.disabled = true;
+    scisorsElement.disabled = true;
+    paperElement.disabled = true;
+}
+
+function resetGame() {
+    rockElement.disabled = false;
+    scisorsElement.disabled = false;
+    paperElement.disabled = false;
+
+    resultDisplayElement.textContent = null
+    resultDisplayElement.style.backgroundColor = ""
+    playerChoiceElement.textContent = null
+    playerChoiceElement.style.backgroundColor = ""
+    computerChoiceElement.textContent = null
+    computerChoiceElement.style.backgroundColor = ""
+}
+
 /*----------------------------- Event Listeners -----------------------------*/
 rockElement.addEventListener('click', play)
 paperElement.addEventListener('click', play)
 scisorsElement.addEventListener('click', play)
+
+resetElement.addEventListener('click', resetGame)
 
 

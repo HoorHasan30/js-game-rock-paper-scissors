@@ -20,7 +20,11 @@ header {
 
 #result-display {
   min-height: 20px;
-  font-size: 32px;
+  font-size: 25px;
+  width: 200px;
+  text-align: center;
+  border-radius: 20px;
+  padding: 5px;
 }
 
 button {
@@ -47,6 +51,15 @@ button {
 button:hover{
   background-color: rgba(215, 217, 218, 0.575);
   cursor: pointer;
+}
+
+.choices {
+  margin: 5px;
+  width: 200px;
+  text-align: center;
+  border-radius: 12px;
+  padding: 5px;
+
 }
 
 
