@@ -61,6 +61,21 @@ function play(eevnt){
 
 
     // 3- Compare both choices
+    if (myChoice === computerChoice){ 
+        console.log("Tie Game")
+    }
+    else if (myChoice == "rock" && computerChoice == "scisors"){
+        console.log("You Win")
+    }
+    else if (myChoice == "scisors" && computerChoice == "paper"){
+        console.log("You Win")
+    }
+    else if (myChoice == "paper" && computerChoice == "rock"){
+        console.log("You Win")
+    }
+    else { 
+        console.log("You Lose")
+    }
 
     // 4- 
 }
