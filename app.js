@@ -32,20 +32,33 @@ const rockElement = document.querySelector('#rock')
 const paperElement = document.querySelector('#paper')
 const scisorsElement = document.querySelector('#scisors')
 
+const playerChoiceElement = document.querySelector('#player-choice')
+const computerChoiceElement = document.querySelector('#computer-choice')
+
 console.log(resultDisplayElement)
 console.log(rockElement)
 console.log(paperElement)
 console.log(scisorsElement)
+console.log(playerChoiceElement)
+console.log(computerChoiceElement)
 
 /*-------------------------------- Functions --------------------------------*/
 
 function play(eevnt){
 
+    console.log("======================")
+
     // 1- Identify what the plyer picked
     myChoice = event.target.id
     console.log("My Choice is: " + myChoice)
+    playerChoiceElement.textContent = "Player Choice is: " + myChoice
+
 
     // 2- Randomly pick computer choice
+    computerChoice = choices[Math.floor(Math.random()*3)] //ranom 0 -> 0.9
+    console.log("Computer Choice is: " + computerChoice)
+    computerChoiceElement.textContent = "Computer Choice is: " + computerChoice
+
 
     // 3- Compare both choices
 
