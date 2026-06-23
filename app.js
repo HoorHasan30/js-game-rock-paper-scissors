@@ -72,7 +72,7 @@ function getComputerChoice() {
             computerChoiceElement.style.color = "Grey"
             computerChoiceElement.style.backgroundColor = "rgba(215, 217, 218, 0.575)"
         }
-        , 1000)
+        , 1200)
 }
 
 function compare() {
@@ -88,7 +88,7 @@ function compare() {
                 disableBtns()
 
             }
-            , 1100)
+            , 1000)
     }
     else if (myChoice == "rock" && computerChoice == "scisors") {
         setTimeout(
@@ -100,7 +100,7 @@ function compare() {
                 //disable btns
                 disableBtns()
             }
-            , 1100)
+            , 1000)
     }
     else if (myChoice == "scisors" && computerChoice == "paper") {
         setTimeout(
@@ -112,7 +112,7 @@ function compare() {
                 //disable btns
                 disableBtns()
             }
-            , 1100)
+            , 1000)
     }
     else if (myChoice == "paper" && computerChoice == "rock") {
         setTimeout(
@@ -124,7 +124,7 @@ function compare() {
                 //disable btns
                 disableBtns()
             }
-            , 1100)
+            , 1000)
     }
     else {
         setTimeout(
@@ -136,7 +136,7 @@ function compare() {
                 //disable btns
                 disableBtns()
             }
-            , 1100)
+            , 1000)
     }
 }
 
@@ -147,25 +147,43 @@ function play(event) {
     getPlayerChoice(event)
     getComputerChoice()
     compare()
-    resetGame()
 }
 
 // 4- reset Game
 function disableBtns() {
     rockElement.disabled = true;
+    rockElement.style.backgroundColor = "rgba(215, 217, 218, 0.575)"
+
     scisorsElement.disabled = true;
+    scisorsElement.style.backgroundColor = "rgba(215, 217, 218, 0.575)"
+    
     paperElement.disabled = true;
+    paperElement.style.backgroundColor = "rgba(215, 217, 218, 0.575)"
+    
+    resetElement.disabled = false;
+    resetElement.style.backgroundColor = "rgb(206, 224, 236)"
+    
 }
 
 function resetGame() {
     rockElement.disabled = false;
+    rockElement.style.backgroundColor = "rgb(206, 224, 236)"
+
     scisorsElement.disabled = false;
+    scisorsElement.style.backgroundColor = "rgb(206, 224, 236)"
+    
     paperElement.disabled = false;
+    paperElement.style.backgroundColor = "rgb(206, 224, 236)"
+
+    resetElement.disabled = true;
+    resetElement.style.backgroundColor = "rgba(215, 217, 218, 0.575)"
 
     resultDisplayElement.textContent = null
     resultDisplayElement.style.backgroundColor = ""
+
     playerChoiceElement.textContent = null
     playerChoiceElement.style.backgroundColor = ""
+
     computerChoiceElement.textContent = null
     computerChoiceElement.style.backgroundColor = ""
 }
