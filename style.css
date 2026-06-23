@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400..900&family=Henny+Penny&family=IM+Fell+English:ital@0;1&family=Londrina+Shadow&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+html, body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  font-family: Alice;
+}
+
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+#result-display {
+  min-height: 20px;
+}
+
+.btn {
+    /* display: flex; */
+    border-radius: 100%;
+    border: none;
+
+    height: 120px;
+    width: 120px;
+    text-align: center;
+
+    margin: 20px 10px;
+    align-items: center;
+
+    background-color: rgb(215, 217, 218);
+    color: rgb(253, 253, 253);
+    font-size: 50px;
+    font-weight: 300;
+
+    transition: all .05;
+    
+}
+
+.btn:hover{
+    background-color: rgba(117, 123, 129, 0.803);
+    cursor: pointer;
+}
+
