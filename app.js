@@ -19,15 +19,41 @@
 //    Clearly indicate who won
 
 /*-------------------------------- Constants --------------------------------*/
-
+const choices = ['rock', 'paper','scisors']
 
 /*-------------------------------- Variables --------------------------------*/
-
+let myChoice
+let computerChoice
+let message //win || lose 
 
 /*------------------------ Cached Element References ------------------------*/
+const resultDisplayElement = document.querySelector('#result-display')
+const rockElement = document.querySelector('#rock')
+const paperElement = document.querySelector('#paper')
+const scisorsElement = document.querySelector('#scisors')
+
+console.log(resultDisplayElement)
+console.log(rockElement)
+console.log(paperElement)
+console.log(scisorsElement)
 
 /*-------------------------------- Functions --------------------------------*/
 
+function play(eevnt){
+
+    // 1- Identify what the plyer picked
+    myChoice = event.target.id
+    console.log("My Choice is: " + myChoice)
+
+    // 2- Randomly pick computer choice
+
+    // 3- Compare both choices
+
+    // 4- 
+}
 /*----------------------------- Event Listeners -----------------------------*/
+rockElement.addEventListener('click', play)
+paperElement.addEventListener('click', play)
+scisorsElement.addEventListener('click', play)
 
 

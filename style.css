@@ -18,15 +18,11 @@ header {
   align-items: center;
 }
 
-h1 {
-    text-align: center;
-}
-
 #result-display {
   min-height: 20px;
 }
 
-.btn {
+button {
     /* display: flex; */
     border-radius: 100%;
     border: none;
@@ -47,7 +43,7 @@ h1 {
     
 }
 
-.btn:hover{
+button:hover{
     background-color: rgba(117, 123, 129, 0.803);
     cursor: pointer;
 }
