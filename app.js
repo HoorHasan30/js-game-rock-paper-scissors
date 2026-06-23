@@ -153,7 +153,7 @@ function play(event) {
 function disableBtns() {
     rockElement.disabled = true;
     rockElement.style.backgroundColor = "rgba(215, 217, 218, 0.575)"
-
+    
     scisorsElement.disabled = true;
     scisorsElement.style.backgroundColor = "rgba(215, 217, 218, 0.575)"
     
