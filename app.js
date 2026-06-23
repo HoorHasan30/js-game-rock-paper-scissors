@@ -63,18 +63,36 @@ function play(eevnt){
     // 3- Compare both choices
     if (myChoice === computerChoice){ 
         console.log("Tie Game")
+        resultDisplayElement.textContent = ("Tie Game")
+        resultDisplayElement.style.color = "Grey"
+ 
+        resultDisplayElement.style.backgroundColor = "rgba(215, 217, 218, 0.575)"
+        
+
     }
     else if (myChoice == "rock" && computerChoice == "scisors"){
         console.log("You Win")
+        resultDisplayElement.textContent = ("You Win")
+        resultDisplayElement.style.color = "Green"
+        resultDisplayElement.style.backgroundColor = "rgba(215, 217, 218, 0.575)"
     }
     else if (myChoice == "scisors" && computerChoice == "paper"){
         console.log("You Win")
+        resultDisplayElement.textContent = ("You Win")
+        resultDisplayElement.style.color = "Green"
+        resultDisplayElement.style.backgroundColor = "rgba(215, 217, 218, 0.575)"
     }
     else if (myChoice == "paper" && computerChoice == "rock"){
         console.log("You Win")
+        resultDisplayElement.textContent = ("You Win")
+        resultDisplayElement.style.color = "Green"
+        resultDisplayElement.style.backgroundColor = "rgba(215, 217, 218, 0.575)"
     }
     else { 
         console.log("You Lose")
+        resultDisplayElement.textContent = ("You Lose")
+        resultDisplayElement.style.color = "Red"
+        resultDisplayElement.style.backgroundColor = "rgba(215, 217, 218, 0.575)"
     }
 
     // 4- 

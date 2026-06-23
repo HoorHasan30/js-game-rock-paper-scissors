@@ -20,31 +20,34 @@ header {
 
 #result-display {
   min-height: 20px;
+  font-size: 32px;
 }
 
 button {
-    /* display: flex; */
-    border-radius: 100%;
-    border: none;
+  /* display: flex; */
+  border-radius: 100%;
+  border: none;
 
-    height: 120px;
-    width: 120px;
-    text-align: center;
+  height: 120px;
+  width: 120px;
+  text-align: center;
 
-    margin: 20px 10px;
-    align-items: center;
+  margin: 20px 10px;
+  align-items: center;
 
-    background-color: rgb(215, 217, 218);
-    color: rgb(253, 253, 253);
-    font-size: 50px;
-    font-weight: 300;
+  background-color: rgb(206, 224, 236);
+  color: rgb(253, 253, 253);
+  font-size: 50px;
+  font-weight: 300;
 
-    transition: all .05;
+  transition: all .05;
     
 }
 
 button:hover{
-    background-color: rgba(117, 123, 129, 0.803);
-    cursor: pointer;
+  background-color: rgba(215, 217, 218, 0.575);
+  cursor: pointer;
 }
+
+
 
